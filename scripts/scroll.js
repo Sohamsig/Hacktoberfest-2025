@@ -44,3 +44,22 @@ Math.easeInOutQuad = (t, b, c, d) => {
   t--;
   return (-c / 2) * (t * (t - 2) - 1) + b;
 };
+
+// Back to Top Button Functionality
+const backToTopBtn = document.getElementById("back-to-top-btn");
+
+window.addEventListener("scroll", () => {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
